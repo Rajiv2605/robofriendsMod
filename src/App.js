@@ -11,7 +11,8 @@ class App extends Component {
         super();
         this.state = {
             robots: [],
-            searchbar: ''
+            searchbar: '',
+            searchFilter: ''
         }
     }
 
@@ -26,10 +27,22 @@ class App extends Component {
         //console.log(event.target.value);
     }
 
+    onFilterSelect = (event) => {
+        this.setState({searchFilter: event.target.value});
+        console.log(event.target.value);
+    }
+
     render() {
-        const filteredRobots = this.state.robots.filter(robot => {
-            return robot.name.toLowerCase().includes(this.state.searchbar);
-        });
+        let filteredRobots = this.state.robots;
+        if(this.state.searchFilter === "name")
+            filteredRobots = this.state.robots.filter(robot => {
+                return robot.name.toLowerCase().includes(this.state.searchbar);
+            });
+        else if(this.state.searchFilter === "email")
+            filteredRobots = this.state.robots.filter(robot => {
+                return robot.email.toLowerCase().includes(this.state.searchbar);
+            });
+
         if(this.state.robots.length === 0)
             return(
                 <div>
@@ -50,7 +63,8 @@ class App extends Component {
                     </Scroll>
                     <div className="searchDiv">
                         <h3 className="searchFor">Search for: </h3>
-                        <select id="filterChoice">
+                        <select id="filterChoice" onChange={this.onFilterSelect}>
+                            <option value="defaultChoice">select</option>
                             <option value="name">Name</option>
                             <option value="email">Email</option>
                         </select>
