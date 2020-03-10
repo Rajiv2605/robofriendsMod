@@ -10,3 +10,20 @@ h1 {
     font-weight: 200;
     color: #0ccac4;
 }
+
+.searchDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#filterChoice {
+    margin-left: 1em;
+    margin-right: 1em;
+    max-height: 2em;
+    align-self: center;
+}
+
+.searchFor {
+    color: #0ccac4;
+    align-self: center;
+}

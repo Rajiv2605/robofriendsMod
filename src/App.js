@@ -38,7 +38,7 @@ class App extends Component {
             )
         else {
             const body = document.querySelector("body");
-            body.style.background = "linear-gradient(to left, rgba(7, 27, 82, 1) 0%, rgba(0, 128, 128, 1) 100%)"
+            body.style.background = "linear-gradient(to left, rgba(7, 27, 82, 1) 0%, rgba(0, 128, 128, 1) 100%)";
 
             return (
                 <div className='tc'>
@@ -48,7 +48,14 @@ class App extends Component {
                             <CardArray robots={filteredRobots} />
                         </ErrorBoundary>
                     </Scroll>
-                    <Searchbar searchChange = {this.onSearchChange} />
+                    <div className="searchDiv">
+                        <h3 className="searchFor">Search for: </h3>
+                        <select id="filterChoice">
+                            <option value="name">Name</option>
+                            <option value="email">Email</option>
+                        </select>
+                        <Searchbar searchChange = {this.onSearchChange} />
+                    </div>
                 </div>
             );
         }
