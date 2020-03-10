@@ -1,0 +1,12 @@
+body {
+    background: black;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    margin: 10em;
+}
