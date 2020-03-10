@@ -30,13 +30,16 @@ class App extends Component {
         const filteredRobots = this.state.robots.filter(robot => {
             return robot.name.toLowerCase().includes(this.state.searchbar);
         });
-        if(true)//this.state.robots.length === 0) 
+        if(this.state.robots.length === 0)
             return(
                 <div>
                     <LoadingScreen />
                 </div>
             )
-        else
+        else {
+            const body = document.querySelector("body");
+            body.style.background = "linear-gradient(to left, rgba(7, 27, 82, 1) 0%, rgba(0, 128, 128, 1) 100%)"
+
             return (
                 <div className='tc'>
                     <h1 className='f1'>Robofriends</h1>
@@ -48,6 +51,7 @@ class App extends Component {
                     <Searchbar searchChange = {this.onSearchChange} />
                 </div>
             );
+        }
     }
 }
 

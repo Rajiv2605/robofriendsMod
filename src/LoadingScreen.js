@@ -4,8 +4,8 @@ import './LoadingScreen.css';
 
 const LoadingScreen = () => {
     return(
-        <div>
-            <img src={logo} alt="loadingGif" />
+        <div className="loadingDiv">
+            <img className="loadingGif" src={logo} alt="loadingGif" />
         </div>
     );
 }

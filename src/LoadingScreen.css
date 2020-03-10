@@ -2,11 +2,11 @@ body {
     background: black;
 }
 
-div {
+.loadingDiv {
     display: flex;
     justify-content: center;
 }
 
-img {
+.loadingGif {
     margin: 10em;
 }
