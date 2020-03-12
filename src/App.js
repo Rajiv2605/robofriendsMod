@@ -23,13 +23,13 @@ class App extends Component {
     }
 
     onSearchChange = (event) => {
-        this.setState({searchbar: event.target.value});
+        this.setState({searchbar: event.target.value.toLowerCase()});
         //console.log(event.target.value);
     }
 
     onFilterSelect = (event) => {
         this.setState({searchFilter: event.target.value});
-        console.log(event.target.value);
+        //console.log(event.target.value);
     }
 
     render() {
